@@ -80,7 +80,7 @@ jobs:
       - name: Provision Infrastructure
         run: |
           pushd ./workshop
-          azd provision --no-prompt --verbose
+          azd provision --no-prompt
           popd
         env:
           AZD_INITIAL_ENVIRONMENT_CONFIG: ${{ secrets.AZD_INITIAL_ENVIRONMENT_CONFIG }}
@@ -88,6 +88,6 @@ jobs:
       - name: Deploy Application
         run: |
           pushd ./workshop
-          azd deploy --no-prompt
+          azd deploy --no-prompt --verbose
           popd
 
